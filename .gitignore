@@ -8,6 +8,11 @@ dist
 build
 *.tsbuildinfo
 
+# Local bun:sqlite database
+local.db
+local.db-shm
+local.db-wal
+
 # Generated files
 apps/web/src/routeTree.gen.ts
 

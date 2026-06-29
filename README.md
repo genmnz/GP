@@ -114,8 +114,7 @@ All four models run concurrently per frame. Every *decision* happens in TypeScri
 
 ## Tech stack — and why
 
-This is a [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack)
-monorepo. Each choice is deliberate:
+This is a monorepo. Each choice is deliberate:
 
 ### Runtime & tooling
 - **Bun** — a fast, lightweight, all-in-one runtime: package manager, bundler, test
@@ -183,7 +182,6 @@ monorepo. Each choice is deliberate:
 ├─ biome.json                 # lint + format
 ├─ turbo.json                 # task pipeline
 ├─ bunfig.toml                # bun install (isolated linker)
-├─ bts.jsonc                  # Better-T-Stack manifest
 └─ package.json               # bun workspaces + dependency catalog
 ```
 

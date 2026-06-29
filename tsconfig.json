@@ -1,3 +1,3 @@
 {
-  "extends": "@ziko/config/tsconfig.base.json"
+	"extends": "@ziko/config/tsconfig.base.json"
 }

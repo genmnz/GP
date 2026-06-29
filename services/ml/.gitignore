@@ -1,0 +1,13 @@
+# Trained weights and datasets — never commit these.
+models/
+data/
+output/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.env

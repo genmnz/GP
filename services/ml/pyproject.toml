@@ -1,0 +1,45 @@
+[project]
+name = "smart-traffic-ml"
+version = "0.1.0"
+description = "ML-only service for the Smart Traffic system: training + thin stateless inference."
+requires-python = ">=3.10"
+
+# Core deps: enough to run the FastAPI service in stub mode (no torch needed).
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "python-multipart>=0.0.9",
+    "pydantic>=2.6",
+]
+
+[project.optional-dependencies]
+# Real models: install with `pip install -e .[ml]`
+ml = [
+    "torch>=2.2",
+    "torchvision>=0.17",
+    "torchaudio>=2.2",
+    "numpy>=1.26",
+    "pillow>=10.2",
+    "librosa>=0.10",
+    "tqdm>=4.66",
+    "datasets>=2.19",
+]
+# Live street-camera streaming: install with `pip install -e .[stream]`
+# (yt-dlp resolves YouTube/HLS URLs, OpenCV decodes frames, ultralytics counts
+#  vehicles for the live "detect cars" cross-check). Needs the [ml] extra too.
+stream = [
+    "yt-dlp>=2024.0",
+    "opencv-python-headless>=4.9",
+    "ultralytics>=8.2",
+]
+# Tests: install with `pip install -e .[dev]`
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.setuptools]
+packages = ["app", "training", "scripts"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
